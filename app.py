@@ -1,11 +1,10 @@
 import streamlit as st
 
-st.set_page_config(page_title="Costo Orario Poltrona", page_icon="🦷")
+st.set_page_config(page_title="Costo Mensile Poltrona", page_icon="🦷")
 
-st.title("🦷 Calcolo Costo Orario della Poltrona - Studio Odontoiatrico")
+st.title("🦷 Calcolo Costo Mensile della Poltrona - Studio Odontoiatrico")
 
-# Sezione: Costi fissi mensili
-st.header("📦 Costi Fissi Mensili")
+st.header("📦 Costi Fissi e Operativi Mensili")
 affitto = st.number_input("Affitto (€)", min_value=0, value=1000)
 stipendi = st.number_input("Stipendi + contributi (€)", min_value=0, value=3000)
 utenze = st.number_input("Utenze (€)", min_value=0, value=300)
@@ -23,20 +22,17 @@ st.header("🧾 Altri Costi Personalizzati")
 altro1 = st.number_input("Altro costo 1 (€)", min_value=0, value=0)
 altro2 = st.number_input("Altro costo 2 (€)", min_value=0, value=0)
 
-# Sezione: Ore lavorative e numero poltrone
-st.header("🕒 Attività Clinica")
-ore_mese = st.number_input("Ore produttive per poltrona al mese", min_value=1, value=80)
+# Numero di poltrone
+st.header("🦷 Numero di Poltrone Attive")
 poltrone = st.number_input("Numero di poltrone attive", min_value=1, value=1)
 
-# Calcolo del costo orario
-totale_fisso = sum([
+# Calcolo costo mensile per poltrona
+totale_costi = sum([
     affitto, stipendi, utenze, leasing, software, commercialista,
     pulizie, assicurazioni, manutenzione, sicurezza, marketing,
     altro1, altro2
 ])
 
-if ore_mese > 0 and poltrone > 0:
-    costo_orario = totale_fisso / (ore_mese * poltrone)
-    st.success(f"💶 Costo orario per poltrona: **€{costo_orario:.2f}**")
-else:
-    st.warning("Inserisci valori validi per ore e poltrone.")
+costo_mensile_per_poltrona = totale_costi / poltrone
+
+st.success(f"💶 Costo mensile per poltrona: **€{costo_mensile_per_poltrona:.2f}**")
