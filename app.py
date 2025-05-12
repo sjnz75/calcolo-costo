@@ -6,8 +6,18 @@ st.set_page_config(page_title="Costo Orario Poltrona", page_icon="🦷", layout=
 st.title("🦷 Costo Orario della Poltrona Odontoiatrica")
 
 st.markdown("""
-Calcola il **costo reale per ogni ora** in cui una poltrona dello studio è attiva.
-Inserisci i tuoi **costi fissi e operativi mensili**, le ore lavorative e il numero di poltrone: otterrai un dato essenziale per definire i prezzi minimi delle prestazioni, valutare la redditività e capire se lo studio è economicamente sostenibile.
+### 📘 A cosa serve questo calcolo
+
+Il calcolo del **costo orario della poltrona** consente a un dentista di conoscere con precisione **quanto costa ogni ora di attività clinica**, a prescindere dal tipo di trattamento.  
+È uno strumento essenziale per:
+
+- determinare i **prezzi minimi sostenibili**
+- valutare la **redditività delle prestazioni**
+- analizzare la **struttura economica dello studio**
+
+Il valore risultante rappresenta il **punto di pareggio orario**: qualsiasi prestazione erogata sotto quel valore genera una perdita economica.
+
+👉 Conoscere questo dato permette di **prendere decisioni consapevoli**, evitare sottoprezzi e costruire una **tariffazione sostenibile e professionale**.
 """)
 
 st.divider()
